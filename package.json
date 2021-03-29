@@ -1,0 +1,46 @@
+{
+  "name": "MusisShop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "development Web shop",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "co": "^4.6.0",
+    "connect-mongo": "^4.4.0",
+    "cookie-parser": "^1.4.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-paginate": "^1.0.2",
+    "express-session": "^1.17.1",
+    "helmet": "^4.4.1",
+    "jquery": "^3.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.19",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-plugin-autoinc": "^1.1.9",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "eslint": "^7.21.0",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node init.js --delay 2"
+  }
+}
