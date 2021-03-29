@@ -1,0 +1,19 @@
+<%- include('../header') %>
+
+        <h1>게시판 수정</h1>
+       
+        
+        <form action="/board/boardUpdate/<%=boards.id%>" method="post">
+            <div class="panel-heading">
+                    작성자 :  <%=boards.userID%>
+            </div>
+               
+            <div>
+                <input type="text" name="title" value="<%=boards.title%>">
+            </div>
+            <p><textarea  cols="50" rows="10" name="content" ><%=boards.content%></textarea></p>
+           
+            <button type="subimt">수정하기</button>
+        </form>
+       
+        <%- include('../footer') %>

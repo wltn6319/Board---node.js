@@ -1,0 +1,82 @@
+<%- include('../header') %>
+
+        <h1 style="margin-bottom: 70px; margin-left: 450px; margin-top:50px">Q&A</h1>
+        <div style="margin-left: 165px;">
+            <a href="/board/boardCreate"><button type="button" class="btn btn-primary">글쓰기</button></a>
+        </div>
+        </br>
+        <div class="col-sm-8" style="margin-left: 150px;">
+           
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th> 
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>삭제</th>
+                </tr>
+                <% boards.forEach( function(board,index){ %>
+                    <tr>
+                        <td>
+                            <%=(totalPost-index)-((currentPage-1)*maxPost)%>
+                          </td>
+                        <td>
+                            <a href="/board/boardDetail/<%=board.id%>"><%=board.title%></a>
+                        </td>      
+                        <td>  
+                            <%=board.userID%>
+                        </td>                
+                        <td>
+                            <%=board.getDate.year%>-<%=board.getDate.month%>-<%=board.getDate.day%>
+                        </td>
+                        <td>
+                            <a href="/board/boardDelete/<%=board.id%>" class="btn btn-primary">삭제</a>
+                        </td>
+                      
+                    </tr>
+                    <%});%>
+            </table>  
+        
+            
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                
+                <% if(currentPage!==1){%>
+                <li class="page-item">                
+                  <a class="page-link" href="?page=<%=currentPage-1%>" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <%}%>      
+                  
+           
+                <% for(let i=startPage; i<=endPage; i++ ){%>      
+                  <%if(currentPage === i){%>
+                   <li class="page-item">               
+                     <a class="page-link" href="?page=<%=i%>" style="border-bottom: solid;"><%= i %></a class="number">                  
+                    </li>
+                  <%} else{%>
+                    <li class="page-item">               
+                      <a class="page-link" href="?page=<%=i%>"><%= i %></a class="number">                  
+                    </li>
+                    <%}%>
+                <%}%>
+
+
+
+                <% if(currentPage!==totalPage){%>
+                <li class="page-item">
+                  <a class="page-link" href="?page=<%=currentPage+1%>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+                <%}%>
+              </ul>
+            </nav>
+
+        </div>
+
+        <%- include('../footer') %>
+
+
+        
